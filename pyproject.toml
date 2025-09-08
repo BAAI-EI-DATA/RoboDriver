@@ -1,5 +1,5 @@
 [project]
-name = "WanX-EI-Studio"
+name = "WanX-EI-Studio-Public"
 version = "0.1.0"
 description = ""
 readme = "README.md"
@@ -44,7 +44,7 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["operating_platform"]
+packages = []
 
 [build-system]
 requires = ["setuptools>=61", "wheel"]
