@@ -6,28 +6,28 @@
 
 ## 1. Start (without Docker)
 
-get this project
+Get this project
 
 ```sh
-git cloen https://github.com/DoRobot-Project/DoRobot-Preview.git
-cd DoRobot-Preview
+git clone https://github.com/BAAI-EI-DATA/WanX-EI-Studio-Public.git
+cd WanX-EI-Studio-Public
 ```
 
-### 1.1. Initital DoRobot enviroment
+### 1.1. Initialize Platform Environment
 
-creat conda env
+Create Conda env
 
 ```sh
 conda create --name wanx-studio python==3.11
 ```
 
-activate conda env
+Activate Conda env
 
 ```sh
 conda activate wanx-studio
 ```
 
-install this project
+Install this project
 
 ```sh
 pip install -e .
@@ -37,7 +37,7 @@ pip install -e .
 pip install ./wheels/*.whl
 ```
 
-**install pytorch, according to your platform**
+Install PyTorch (choose your platform)
 
 ```sh
 # ROCM 6.1 (Linux only)
@@ -54,29 +54,29 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 ```
 
-install libportaudio2
+Install libportaudio2 (Ubuntu)
 
 ```
 sudo apt install libportaudio2
 ```
 
-### 1.2. Initital SO101 enviroment
+### 1.2. Initialize SO101 Environment
 
-Open a new terminal and switch to the DoRobot-Preview project directory.
+Open a new terminal and switch to the project directory.
 
-creat conda env
+Create Conda env
 
 ```sh
 conda create --name dr-robot-so101 python==3.10
 ```
 
-activate conda env
+Activate Conda env
 
 ```sh
 conda activate dr-robot-so101
 ```
 
-install robot enviroment
+Install robot environment
 
 ```sh
 cd operating_platform/robot/robots/so101_v1
@@ -85,14 +85,14 @@ pip install -e .
 
 ### 1.3. Calibrate SO101 Arm
 
-calibrate leader arm
+Calibrate leader arm
 
 ```
 cd operating_platform/robot/components/arm_normal_so101_v1/
 dora run dora_calibrate_leader.yml
 ```
 
-calibrate follower arm
+Calibrate follower arm
 
 ```
 cd operating_platform/robot/components/arm_normal_so101_v1/
@@ -108,33 +108,33 @@ dora run dora_teleoperate_arm.yml
 
 ## 3. Record Data
 
-You need to unplug all camera and robotic arm data interfaces first, then plug in the head camera.
+First unplug all camera and arm USB connections. Then plug in the head camera.
 
 ```
 ls /dev/video*
 ```
 
-you can see:
+You should see:
 
 ```
 /dev/video0 /dev/video1
 ```
 
-If you see other indices, please make sure that all other cameras have been disconnected from the computer. If you are unable to remove them, please modify the camera index in the YAML file. 
+If you see other indices, make sure all other cameras are disconnected. If you cannot remove them, update the camera index in the YAML file.
 
-then plug in the head camera.
+Then plug in the wrist camera.
 
 ```
 ls /dev/video*
 ```
 
-you can see:
+You should see:
 
 ```
 /dev/video0 /dev/video1 /dev/video2 /dev/video3
 ```
 
-now, you finish camera connect.
+Now camera connections are ready.
 
 Next, connect the robotic arm by first plugging in the leader arm's USB interface.
 
@@ -148,7 +148,7 @@ you can see:
 /dev/ttyACM0
 ```
 
-Then plugging in the follower arm's USB interface.
+Then plug in the follower arm's USB interface.
 
 ```
 ls /dev/ttyACM*
@@ -160,7 +160,7 @@ you can see:
 /dev/ttyACM0 /dev/ttyACM1
 ```
 
-run dora data flow 
+Run Dora dataflow
 
 ```
 cd operating_platform/robot/robots/so101_v1
@@ -168,13 +168,13 @@ conda activate dr-robot-so101
 dora run dora_teleoperate_dataflow.yml
 ```
 
-Open a new terminal, then:
+Open a new terminal, then run:
 
 ```
 bash operating_platform/robot/robots/so101_v1/scripts/run_so101_cli.sh
 ```
 
-You can modify the task name and task description by adjusting the parameters within the run_so101_cli.sh file.
+You can modify task name/description by editing parameters in `scripts/run_so101_cli.sh`.
 
 
 # Acknowledgment

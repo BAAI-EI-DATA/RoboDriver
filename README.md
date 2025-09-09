@@ -1,36 +1,29 @@
 # WanX-EI-Studio-Public
 
-Docs coming soon.
+Robotics operating platform built on Dora dataflows and ZeroMQ, with sample robots (SO101, Realman, Pika, Aloha) and reusable components (cameras, arms, grippers, trackers, visualization).
 
-## Start
-creat conda env
+## Quick Start
+
+Create and activate Conda env:
 
 ```sh
 conda create --name wanx-studio python==3.11
-```
-
-activate conda env
-
-```sh
 conda activate wanx-studio
 ```
 
-install this project
+Install this project and bundled wheels:
 
 ```sh
 pip install -e .
-```
-
-```sh
 pip install ./wheels/*.whl
 ```
 
-**install pytorch, according to your platform**
+Install PyTorch (choose your platform):
 
 ```sh
-# ROCM 6.1 (Linux only)
+# ROCm 6.1 (Linux only)
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/rocm6.1
-# ROCM 6.2.4 (Linux only)
+# ROCm 6.2.4 (Linux only)
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/rocm6.2.4
 # CUDA 11.8
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118
@@ -41,3 +34,15 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 # CPU only
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
 ```
+
+For audio capture (Ubuntu):
+
+```sh
+sudo apt update && sudo apt install -y libportaudio2
+```
+
+## Next Steps
+
+- Chinese adaptation guide: `ReadMeAI.md`
+- English adaptation guide: `ReadMeAI_EN.md`
+- SO101 full workflow: `README_SO101.md`
