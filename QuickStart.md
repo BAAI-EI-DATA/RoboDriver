@@ -1,4 +1,4 @@
-# WanX-EI‑Studio 使用与机器人适配指南
+# 具身数采工具-机器人适配指南
 
 本仓库提供一套可组装的机器人数据采集系统，基于 Dora 数据流与 ZeroMQ 通讯，已经内置多种机器人/部件的示例实现（SO101、Realman、Pika、Aloha 等）与常用组件（摄像头、机械臂、夹爪、追踪器、可视化等）。本文档旨在帮助你：
 
@@ -69,6 +69,44 @@ pip install -e .
 
 ## 2. 目录结构与关键概念
 
+仓库结构图（关键目录，截取 2~3 层）：
+
+```text
+WanX-EI-Studio-Public/
+├─ QuickStart.md
+├─ README.md
+├─ README_SO101.md
+├─ pyproject.toml
+├─ wheels/
+├─ operating_platform/
+│  ├─ core/
+│  │  └─ coordinator.bin
+│  └─ robot/
+│     ├─ components/                 # 原子组件（Dora 节点）
+│     │  ├─ arm_normal_dynamixel/
+│     │  ├─ arm_normal_piper_v2/
+│     │  ├─ arm_normal_realman_v2/
+│     │  ├─ arm_normal_so101_v1/
+│     │  ├─ camera_opencv/
+│     │  ├─ camera_rgbd_orbbec_v1/
+│     │  ├─ camera_rgbd_orbbec_v2/
+│     │  ├─ camera_rgbd_realsense/
+│     │  ├─ dora-rerun/
+│     │  ├─ gripper_pika/
+│     │  └─ tracker_6d_vive/
+│     └─ robots/                     # 机器人实现与数据流
+│        ├─ adora_v1/
+│        ├─ aloha_v1/
+│        ├─ pika_v1/
+│        ├─ realman_v1/
+│        ├─ so101_v1/
+│        ├─ com_configs/             # 通用配置片段（相机/电机总线）
+│        ├─ camera.py
+│        ├─ configs.py               # 机器人配置注册与工厂
+│        └─ utils.py
+└─ .gitignore / .dockerignore / ...
+```
+
 - `operating_platform/robot/components/*`: 原子组件节点（Dora 节点），如 `camera_opencv`、`camera_rgbd_*`、`arm_normal_*`、`gripper_pika`、`tracker_6d_vive`、`dora-rerun` 可视化等。
 - `operating_platform/robot/robots/<name>_v1/`: 具体机器人实现与数据流：
   - `manipulator.py`: 机器人 Python 控制端，实现连接、特征、动作发送等；通常通过 ZeroMQ 与 Dora 数据流桥接。
@@ -87,6 +125,15 @@ pip install -e .
 
 
 ## 3. 运行 SO101（示例）
+
+SO101 开发/运行流程（步骤框图）：
+
+
+```text
+准备平台环境 → 安装项目与 wheels → 准备 SO101 环境 → 安装子包依赖 →连接硬件 → 标定 → 检查/修改 YAML
+                     ├─ 启动 Dora 数据流 ─┐
+                     └─ 启动 Python 控制端 ─┴─ 联调（ZMQ/特征/动作） → 可视化与记录
+```
 
 以下步骤与 `README_SO101.md` 一致，简化汇总如下。
 
@@ -301,4 +348,3 @@ python your_entry.py --robot.type=myrobot
 ## 7. 小结
 
 本仓库通过“Dora 数据流 + ZeroMQ 桥接 + Python Manipulator”的模式，将相机/机械臂/夹爪等组件解耦为可组合节点。你可以快速复用现有示例，按需扩展配置与数据流，完成你自己的机器人适配与联动/采集任务。
-
