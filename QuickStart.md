@@ -73,10 +73,17 @@ pip install -e .
 
 ```text
 RoboDriver/
-├─ QuickStart.md
-├─ README.md
-├─ README_SO101.md
-├─ pyproject.toml
+├─ README.md                  # 中文首页
+├─ README_en.md               # English README
+├─ QuickStart.md              # 本文档（适配指南）
+├─ README_SO101.md            # SO101 全流程
+├─ LICENSE                    # Apache-2.0
+├─ CONTRIBUTING.md            # 贡献指南（中英）
+├─ SECURITY.md                # 安全策略
+├─ CHANGELOG.md               # 变更日志（Keep a Changelog / SemVer）
+├─ .github/
+│  ├─ ISSUE_TEMPLATE/
+│  └─ pull_request_template.md
 ├─ wheels/
 ├─ operating_platform/
 │  ├─ core/
@@ -104,7 +111,7 @@ RoboDriver/
 │        ├─ camera.py
 │        ├─ configs.py               # 机器人配置注册与工厂
 │        └─ utils.py
-└─ .gitignore / .dockerignore / ...
+└─ pyproject.toml
 ```
 
 - `operating_platform/robot/components/*`: 原子组件节点（Dora 节点），如 `camera_opencv`、`camera_rgbd_*`、`arm_normal_*`、`gripper_pika`、`tracker_6d_vive`、`dora-rerun` 可视化等。
@@ -182,6 +189,15 @@ bash operating_platform/robot/robots/so101_v1/scripts/run_so101_cli.sh
 ## 4. 适配你自己的机器人
 
 建议基于一个最接近的现有机器人目录复制改造，例如拷贝 `operating_platform/robot/robots/so101_v1` 到 `myrobot_v1`，再按下述步骤修改。
+
+适配清单（TL;DR）：
+
+- 复制参考目录：从最接近的 `<robot>_v1/` 复制为 `myrobot_v1/`；
+- 定义配置：在 `robots/configs.py` 新增 `MyRobotConfig` 并注册工厂；
+- 实现控制：在 `robots/myrobot_v1/manipulator.py` 实现连接/特征/动作发送；
+- 编排数据流：为相机/电机/桥接编写 `dora_*.yml`；
+- 对齐桥接：确保 `dora_zeromq.py` 与 `manipulator.py` 的 IPC 地址与事件名一致；
+- 启动联调：`dora run ...` + 平台端 Python 脚本，检查图像与关节回传、动作闭环。
 
 ### 4.1 定义机器人配置（configs）
 
