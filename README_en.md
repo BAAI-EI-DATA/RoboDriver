@@ -1,6 +1,6 @@
 # RoboDriver
 
-[English](./README.md) | [中文](./README_zh.md)
+[English](./README_en.md) | [中文](./README.md)
 
 RoboDriver is an embodied data collection toolkit from the BAAI Embodied Data Team. It builds robotics pipelines on Dora dataflows with a ZeroMQ bridge, and ships reference robots (SO101, Realman, Pika, Aloha) plus reusable nodes (cameras, arms, grippers, trackers, visualization).
 
@@ -26,6 +26,8 @@ Follow the setup and usage guide in `QuickStart.md`.
 It covers Conda environments, project installation, PyTorch options, optional audio libraries, and running sample dataflows.
 
 ## Roadmap
+
+The following items are in development (ETA ~1 month):
 
 - Integrate with ROS1
 - Integrate with ROS2

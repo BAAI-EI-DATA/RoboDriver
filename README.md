@@ -1,6 +1,6 @@
 # RoboDriver
 
-[English](./README.md) | [中文](./README_zh.md)
+[English](./README_en.md) | [中文](./README.md)
 
 RoboDriver 是由 BAAI 具身数据团队打造的具身数据采集工具。它基于 Dora 数据流与 ZeroMQ 桥接构建机器人数据管线，内置参考机器人（SO101、Realman、Pika、Aloha）以及可复用节点（相机、机械臂、夹爪、追踪器、可视化）。
 
@@ -27,6 +27,8 @@ RoboDriver 是由 BAAI 具身数据团队打造的具身数据采集工具。它
 
 ## 路线图
 
+以下功能正在开发中（预计约 1 个月内提供）：
+
 - 集成 ROS1
 - 集成 ROS2
 - 支持可插拔的套接字传输用于数据流桥接（如 TCP/UDP，扩展 ZeroMQ 之外）
@@ -34,4 +36,3 @@ RoboDriver 是由 BAAI 具身数据团队打造的具身数据采集工具。它
 ## 参与贡献
 
 - 由 BAAI 具身数据团队维护。欢迎通过 Issues/PRs 参与共建。
-
