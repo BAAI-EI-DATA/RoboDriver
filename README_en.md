@@ -2,16 +2,16 @@
 
 [English](./README_en.md) | [中文](./README.md)
 
-RoboDriver is an embodied data collection toolkit from the BAAI Embodied Data Team. It builds robotics pipelines on Dora dataflows with a ZeroMQ bridge, and ships reference robots (SO101, Realman, Pika, Aloha) plus reusable nodes (cameras, arms, grippers, trackers, visualization).
+RoboDriver is an open-source embodied data collection toolkit from the BAAI Embodied Data Team. It builds robotics data pipelines on Dora dataflows, with a ZeroMQ bridge to Python controllers. The repo ships reference robots (SO101, Realman, Pika, Aloha) and reusable nodes (cameras, arms, grippers, 6DoF trackers, visualization) to compose pipelines quickly.
 
 This README describes the project’s purpose and structure. For installation and hands‑on usage, use the Quick Start guide.
 
 ## Core Capabilities
 
-- Multi‑robot: reference implementations for SO101, Realman, Pika, and Aloha covering connection, control, and data capture.
+- Multi‑robot support: reference implementations for SO101, Realman, Pika, and Aloha covering connection, control, and data capture.
 - Modular components: composable nodes for cameras, arms, grippers, 6DoF trackers, and visualization (Rerun).
-- Dataflow orchestration: Dora dataflows for message passing; ZeroMQ bridge for Python control and debugging.
-- Multimodal logging: RGB, depth, joint states, and other signals for embodied data collection and annotation.
+- Dataflow orchestration: Dora dataflows for message passing; ZeroMQ bridge to Python control for easy integration and debugging.
+- Multimodal logging: RGB, depth, joint states, and other signals for collection, annotation, and replay.
 
 ## Repository Layout
 
@@ -21,9 +21,16 @@ This README describes the project’s purpose and structure. For installation an
 
 ## Quick Start
 
-Follow the setup and usage guide in `QuickStart.md`.
+Goal: help you quickly integrate your own robot by following the provided examples/templates.
 
-It covers Conda environments, project installation, PyTorch options, optional audio libraries, and running sample dataflows.
+Follow `QuickStart.md` for environment setup and usage. It covers:
+
+- Creating and activating Conda environments
+- Installing the project and bundled wheels
+- Installing PyTorch for your platform
+- Optional audio libraries (Ubuntu)
+- Running sample dataflows and basic debugging
+- Robot adaptation: start from `operating_platform/robot/robots/<robot>_v1/` as a template and adjust `configs.py` / `manipulator.py`
 
 ## Roadmap
 
