@@ -2,35 +2,36 @@
 
 [English](./README.md) | [中文](./README_zh.md)
 
-RoboDriver is an embodied data collection toolkit from the BAAI Embodied Data Team. It builds robotics pipelines on Dora dataflows with a ZeroMQ bridge, and ships reference robots (SO101, Realman, Pika, Aloha) plus reusable nodes (cameras, arms, grippers, trackers, visualization).
+RoboDriver 是由 BAAI 具身数据团队打造的具身数据采集工具。它基于 Dora 数据流与 ZeroMQ 桥接构建机器人数据管线，内置参考机器人（SO101、Realman、Pika、Aloha）以及可复用节点（相机、机械臂、夹爪、追踪器、可视化）。
 
-This README describes the project’s purpose and structure. For installation and hands‑on usage, use the Quick Start guide.
+本文档介绍项目的目的与结构；安装与上手请查看 Quick Start 指南。
 
-## Core Capabilities
+## 核心能力
 
-- Multi‑robot: reference implementations for SO101, Realman, Pika, and Aloha covering connection, control, and data capture.
-- Modular components: composable nodes for cameras, arms, grippers, 6DoF trackers, and visualization (Rerun).
-- Dataflow orchestration: Dora dataflows for message passing; ZeroMQ bridge for Python control and debugging.
-- Multimodal logging: RGB, depth, joint states, and other signals for embodied data collection and annotation.
+- 多机器人：提供 SO101、Realman、Pika、Aloha 的参考实现，覆盖连接、控制与数据采集。
+- 模块化组件：可组合的相机、机械臂、夹爪、6DoF 追踪器与可视化（Rerun）节点。
+- 数据流编排：使用 Dora 数据流进行消息传递，通过 ZeroMQ 与 Python 控制端桥接，便于调试与集成。
+- 多模态记录：支持 RGB、深度、关节状态等多种信号，适用于具身数据采集与标注。
 
-## Repository Layout
+## 仓库结构
 
-- Robot implementations: `operating_platform/robot/robots/*` (e.g., `so101_v1/`, `realman_v1/`, `pika_v1/`, `aloha_v1/`)
-- Atomic components: `operating_platform/robot/components/*` (e.g., `camera_*`, `arm_normal_*`, `gripper_pika`, `tracker_6d_vive`, `dora-rerun`)
-- SO101 end‑to‑end example: `README_SO101.md`
+- 机器人实现：`operating_platform/robot/robots/*`（如 `so101_v1/`、`realman_v1/`、`pika_v1/`、`aloha_v1/`）
+- 原子组件：`operating_platform/robot/components/*`（如 `camera_*`、`arm_normal_*`、`gripper_pika`、`tracker_6d_vive`、`dora-rerun`）
+- SO101 端到端示例：`README_SO101.md`
 
-## Quick Start
+## 快速开始
 
-Follow the setup and usage guide in `QuickStart.md`.
+请阅读 `QuickStart.md` 获取环境搭建与使用说明。
 
-It covers Conda environments, project installation, PyTorch options, optional audio libraries, and running sample dataflows.
+内容涵盖 Conda 环境、项目安装、PyTorch 选项、可选音频依赖，以及如何运行示例数据流。
 
-## Roadmap
+## 路线图
 
-- Integrate with ROS1
-- Integrate with ROS2
-- Support pluggable socket transports for dataflow bridging (e.g., TCP/UDP, beyond ZeroMQ)
+- 集成 ROS1
+- 集成 ROS2
+- 支持可插拔的套接字传输用于数据流桥接（如 TCP/UDP，扩展 ZeroMQ 之外）
 
-## Contributing
+## 参与贡献
 
-- Maintained by the BAAI Embodied Data Team. Issues and PRs are welcome.
+- 由 BAAI 具身数据团队维护。欢迎通过 Issues/PRs 参与共建。
+
