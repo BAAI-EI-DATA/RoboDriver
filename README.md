@@ -43,5 +43,5 @@ sudo apt update && sudo apt install -y libportaudio2
 
 ## Next Steps
 
-- Chinese adaptation guide: [`ReadMeAI.md`](./Guide.md)
+- Chinese adaptation guide: [`QuickStart.md`](./QuickStart.md)
 - SO101 full workflow: [`README_SO101.md`](./README_SO101.md)
