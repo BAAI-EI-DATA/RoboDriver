@@ -1,5 +1,14 @@
 # RoboDriver
 
+<!-- Badges -->
+<p>
+  <a href=".github/workflows/ci.yml"><img alt="Build" src="https://img.shields.io/badge/CI-setup_pending-lightgrey"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
+  <a href="QuickStart.md"><img alt="Docs" src="https://img.shields.io/badge/docs-QuickStart-green"></a>
+  <a href="#"><img alt="PyPI" src="https://img.shields.io/badge/PyPI-pending-lightgrey"></a>
+  
+</p>
+
 [English](./README_en.md) | [中文](./README.md)
 
 RoboDriver 是由 BAAI 具身数据团队开发并维护的开源具身数据采集工具。它基于 Dora 数据流进行消息编排，并通过 ZeroMQ 桥接 Python 控制端。内置参考机器人（SO101、Realman、Pika、Aloha）与可复用节点（相机、机械臂、夹爪、6DoF 追踪器、可视化），可快速拼装数据采集流水线。

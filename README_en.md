@@ -1,5 +1,14 @@
 # RoboDriver
 
+<!-- Badges -->
+<p>
+  <a href=".github/workflows/ci.yml"><img alt="Build" src="https://img.shields.io/badge/CI-setup_pending-lightgrey"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>
+  <a href="QuickStart.md"><img alt="Docs" src="https://img.shields.io/badge/docs-QuickStart-green"></a>
+  <a href="#"><img alt="PyPI" src="https://img.shields.io/badge/PyPI-pending-lightgrey"></a>
+  
+</p>
+
 [English](./README_en.md) | [中文](./README.md)
 
 RoboDriver is an open-source embodied data collection toolkit from the BAAI Embodied Data Team. It builds robotics data pipelines on Dora dataflows, with a ZeroMQ bridge to Python controllers. The repo ships reference robots (SO101, Realman, Pika, Aloha) and reusable nodes (cameras, arms, grippers, 6DoF trackers, visualization) to compose pipelines quickly.
