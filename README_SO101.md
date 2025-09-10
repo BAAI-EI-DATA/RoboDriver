@@ -1,4 +1,4 @@
-# WanX-EI-Studio-Public SO101
+# RoboDriver SO101
 
 > GOSIM 2025
 
@@ -9,8 +9,8 @@
 Get this project
 
 ```sh
-git clone https://github.com/BAAI-EI-DATA/WanX-EI-Studio-Public.git
-cd WanX-EI-Studio-Public
+git clone https://github.com/BAAI-EI-DATA/RoboDriver.git
+cd RoboDriver
 ```
 
 ### 1.1. Initialize Platform Environment
@@ -18,13 +18,13 @@ cd WanX-EI-Studio-Public
 Create Conda env
 
 ```sh
-conda create --name wanx-studio python==3.11
+conda create --name RoboDriver python==3.11
 ```
 
 Activate Conda env
 
 ```sh
-conda activate wanx-studio
+conda activate RoboDriver
 ```
 
 Install this project

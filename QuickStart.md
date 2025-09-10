@@ -16,8 +16,8 @@
 1) 创建并激活 Conda 环境
 
 ```bash
-conda create -n wanx-studio python==3.11
-conda activate wanx-studio
+conda create -n RoboDriver python==3.11
+conda activate RoboDriver
 ```
 
 2) 安装本项目与内置轮子
@@ -72,7 +72,7 @@ pip install -e .
 仓库结构图（关键目录，截取 2~3 层）：
 
 ```text
-WanX-EI-Studio-Public/
+RoboDriver/
 ├─ QuickStart.md
 ├─ README.md
 ├─ README_SO101.md

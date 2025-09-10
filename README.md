@@ -1,4 +1,4 @@
-# WanX-EI-Studio-Public
+# RoboDriver
 
 Robotics operating platform built on Dora dataflows and ZeroMQ, with sample robots (SO101, Realman, Pika, Aloha) and reusable components (cameras, arms, grippers, trackers, visualization).
 
@@ -7,8 +7,8 @@ Robotics operating platform built on Dora dataflows and ZeroMQ, with sample robo
 Create and activate Conda env:
 
 ```sh
-conda create --name wanx-studio python==3.11
-conda activate wanx-studio
+conda create --name RoboDriver python==3.11
+conda activate RoboDriver
 ```
 
 Install this project and bundled wheels:
